@@ -16,8 +16,8 @@ if '%errorlevel%' NEQ '0' (
     echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
     set params = %*:"=""
         
-	echo UAC.ShellExecute "C:\Downloads\Breakdown.bat", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
-	echo UAC.ShellExecute "C:\desktop\breakdown.bat", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
+	echo UAC.ShellExecute "%userprofile%\Downloads\Breakdown.bat", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
+	echo UAC.ShellExecute "%userprofile%\Desktop\Breakdown.bat", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
     
 
     "%temp%\getadmin.vbs"
